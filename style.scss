@@ -1,0 +1,95 @@
+@import "const.scss";
+body {
+    background-image: url("./img/cover.jpg");
+    .container {
+        .row {
+            .col {
+                display: flex;
+                justify-content: center;
+                #title {
+                    margin-top: 10px;
+                    label[name="title"] {
+                        // background-image: url("./img/title.png");
+                        font-family: cursive, Assistant, Arial, sans-serif;
+                        font-size: 50px;
+                        font-weight: 700;
+                    }
+                }
+                .addTask {
+                    display: flex;
+                    justify-content: center;
+                    form[name="addTaskNew"] {
+                        background-image: url("./img/formbg.jpg"); // height: $newTaskHeight;
+                        width: $newTaskWidth;
+                        input {
+                            background-color: transparent;
+                            height: 20px;
+                            border: $inputBorder;
+                        }
+                        textarea[name="taskData"] {
+                            margin-top: $newTaskMargintop;
+                            margin-left: $newTaskMarginleft;
+                            background-color: transparent;
+                            line-height: 2.3;
+                            border: none;
+                            height: 95px;
+                            width: 550px;
+                        }
+                        .date {
+                            margin-top: $newTaskMargintop +-10px;
+                            input[name="taskDate"] {
+                                margin-left: $newTaskMarginleft;
+                                color: $dateColor;
+                            }
+                            input[name="taskHour"] {
+                                width: 80px;
+                                color: $dateColor;
+                            }
+                        }
+                        button {
+                            margin-top: $newTaskMargintop+10px;
+                            font-family: cursive, Assistant, Arial, sans-serif;
+                            border: 2px solid $colorBorderBottun;
+                            color: $colorBottun;
+                            width: 70px;
+                        }
+                    } //end form[name="addTaskNew"]
+                }
+                #cardContainer {
+                    display: flex;
+                    flex-flow: wrap;
+                    .card {
+                        display: inline-block;
+                        border: 1px solid $colorBorderBottun;
+                        margin: 10px;
+                        width: 200px;
+                        height: 200px;
+                        .cardText {
+                            margin: 0;
+                           
+                            border-radius: 5px;
+                            font-size: 20px;
+                            height: 160px;
+                            resize: both;
+                            overflow: auto;
+                        }
+                        .cardDate {
+                            margin: 0;
+                           
+                            border-radius: 5px;
+                            font-size: 10px;
+                            height: 19px;
+                        }
+                        .cardTime {
+                            margin: 0;
+                           
+                            border-radius: 5px;
+                            font-size: 10px;
+                            height: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} //end body

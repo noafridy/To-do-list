@@ -1,0 +1,114 @@
+body {
+  background-image: url("./img/cover.jpg");
+}
+
+body .container .row .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .row .col #title {
+  margin-top: 10px;
+}
+
+body .container .row .col #title label[name="title"] {
+  font-family: cursive, Assistant, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+body .container .row .col .addTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] {
+  background-image: url("./img/formbg.jpg");
+  width: 650px;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] input {
+  background-color: transparent;
+  height: 20px;
+  border: 1px solid #ffffff;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"] {
+  margin-top: 15px;
+  margin-left: 80px;
+  background-color: transparent;
+  line-height: 2.3;
+  border: none;
+  height: 95px;
+  width: 550px;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] .date {
+  margin-top: 5px;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] .date input[name="taskDate"] {
+  margin-left: 80px;
+  color: #d9d9d9;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] .date input[name="taskHour"] {
+  width: 80px;
+  color: #d9d9d9;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] button {
+  margin-top: 25px;
+  font-family: cursive, Assistant, Arial, sans-serif;
+  border: 2px solid #4e45e5;
+  color: #f07c7f;
+  width: 70px;
+}
+
+body .container .row .col #cardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+body .container .row .col #cardContainer .card {
+  display: inline-block;
+  border: 1px solid #4e45e5;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+body .container .row .col #cardContainer .card .cardText {
+  margin: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 160px;
+  resize: both;
+  overflow: auto;
+}
+
+body .container .row .col #cardContainer .card .cardDate {
+  margin: 0;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 19px;
+}
+
+body .container .row .col #cardContainer .card .cardTime {
+  margin: 0;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 19px;
+}
+/*# sourceMappingURL=style.css.map */
