@@ -1,5 +1,5 @@
 body {
-  background-image: url("./img/cover.jpg");
+  background-image: url("./img/cover2.png");
 }
 
 body .container .row .col {
@@ -81,31 +81,35 @@ body .container .row .col #cardContainer {
       flex-flow: wrap;
 }
 
-body .container .row .col #cardContainer .card {
+body .container .row .col #cardContainer .cardItem {
+  position: relative;
+  background-image: url("./img/note1.png");
+  background-repeat: no-repeat;
   display: inline-block;
-  border: 1px solid #4e45e5;
   margin: 10px;
-  width: 200px;
+  width: 300px;
   height: 200px;
 }
 
-body .container .row .col #cardContainer .card .cardText {
-  margin: 0;
-  border-radius: 5px;
-  font-size: 20px;
-  height: 160px;
+body .container .row .col #cardContainer .cardItem .cardText {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  width: 230px;
+  height: 90px;
+  font-size: 15px;
   resize: both;
   overflow: auto;
 }
 
-body .container .row .col #cardContainer .card .cardDate {
+body .container .row .col #cardContainer .cardItem .cardDate {
   margin: 0;
   border-radius: 5px;
   font-size: 10px;
   height: 19px;
 }
 
-body .container .row .col #cardContainer .card .cardTime {
+body .container .row .col #cardContainer .cardItem .cardTime {
   margin: 0;
   border-radius: 5px;
   font-size: 10px;

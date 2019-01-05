@@ -1,6 +1,6 @@
 @import "const.scss";
 body {
-    background-image: url("./img/cover.jpg");
+    background-image: url("./img/cover2.png");
     .container {
         .row {
             .col {
@@ -58,31 +58,34 @@ body {
                 #cardContainer {
                     display: flex;
                     flex-flow: wrap;
-                    .card {
-                        display: inline-block;
-                        border: 1px solid $colorBorderBottun;
+                    .cardItem {
+                        position: relative;
+                        background-image: url("./img/note1.png");
+                        background-repeat: no-repeat;
+                        display: inline-block; 
+                        // border: 1px solid $colorBorderBottun;                      
                         margin: 10px;
-                        width: 200px;
+                        width: 300px;
                         height: 200px;
                         .cardText {
-                            margin: 0;
-                           
-                            border-radius: 5px;
-                            font-size: 20px;
-                            height: 160px;
+                            position: absolute;
+                            top: 25px;
+                            left: 40px;
+                            width: 230px;
+                            height: 90px;
+                            font-size: 15px;
+                            
                             resize: both;
                             overflow: auto;
                         }
                         .cardDate {
                             margin: 0;
-                           
                             border-radius: 5px;
                             font-size: 10px;
                             height: 19px;
                         }
                         .cardTime {
                             margin: 0;
-                           
                             border-radius: 5px;
                             font-size: 10px;
                             height: 19px;
