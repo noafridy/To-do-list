@@ -3,37 +3,47 @@ body {
     background-image: url("./img/cover2.png");
     .container {
         .row {
-            .col {
-                display: flex;
-                justify-content: center;
+            margin-top: 20px;
+            .col-8{
                 #title {
                     margin-top: 10px;
                     label[name="title"] {
-                        // background-image: url("./img/title.png");
                         font-family: cursive, Assistant, Arial, sans-serif;
                         font-size: 50px;
                         font-weight: 700;
                     }
                 }
+            }
+            .col {
+                display: flex;
+                justify-content: center;
+                #imgPines {
+                    width: 125px;
+                    height: 40px;
+                }
+             
                 .addTask {
                     display: flex;
-                    justify-content: center;
+                    justify-content: center; //background-color: $notebookBackgroundColor;
+                    background-image: url("./img/formbg.png");
+                    border: 1px solid $cardBackgroundColor;
+                    border-radius: $borderRadius;
                     form[name="addTaskNew"] {
-                        background-image: url("./img/formbg.jpg"); // height: $newTaskHeight;
-                        width: $newTaskWidth;
+                        // width: $newTaskWidth;
                         input {
                             background-color: transparent;
                             height: 20px;
                             border: $inputBorder;
                         }
                         textarea[name="taskData"] {
+                            background-color: transparent;
                             margin-top: $newTaskMargintop;
                             margin-left: $newTaskMarginleft;
-                            background-color: transparent;
                             line-height: 2.3;
                             border: none;
-                            height: 95px;
-                            width: 550px;
+                            height: 95px; // width: 550px;
+                            word-break: break-word;
+                            overflow: auto;
                         }
                         .date {
                             margin-top: $newTaskMargintop +-10px;
@@ -42,11 +52,12 @@ body {
                                 color: $dateColor;
                             }
                             input[name="taskHour"] {
-                                width: 80px;
+                                // width: 80px;
                                 color: $dateColor;
                             }
                         }
                         button {
+                            background-image: url("./img/buttonNote.png");
                             margin-top: $newTaskMargintop+10px;
                             font-family: cursive, Assistant, Arial, sans-serif;
                             border: 2px solid $colorBorderBottun;
@@ -62,29 +73,44 @@ body {
                         position: relative;
                         background-image: url("./img/note1.png");
                         background-repeat: no-repeat;
-                        display: inline-block; 
-                        // border: 1px solid $colorBorderBottun;                      
-                        margin: 10px;
-                        width: 300px;
-                        height: 200px;
+                        display: inline-block;
+                        width: 275px;
+                        height: 200px; // -webkit-transition: opacity 5s;
+                        // /* Safari */
+                        // transition: opacity 5s;
+                        &:hover .fas {
+                            opacity: 1;
+                        }
+                        .fas {
+                            position: absolute;
+                            top: 30px;
+                            left: 255px;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
                         .cardText {
                             position: absolute;
                             top: 25px;
                             left: 40px;
-                            width: 230px;
+                            width: 210px;
                             height: 90px;
                             font-size: 15px;
-                            
-                            resize: both;
+                            word-break: break-word;
                             overflow: auto;
                         }
                         .cardDate {
+                            position: absolute;
+                            top: 115px;
+                            left: 40px;
                             margin: 0;
                             border-radius: 5px;
                             font-size: 10px;
                             height: 19px;
                         }
                         .cardTime {
+                            position: absolute;
+                            top: 130px;
+                            left: 40px;
                             margin: 0;
                             border-radius: 5px;
                             font-size: 10px;

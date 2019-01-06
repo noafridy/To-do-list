@@ -2,6 +2,20 @@ body {
   background-image: url("./img/cover2.png");
 }
 
+body .container .row {
+  margin-top: 20px;
+}
+
+body .container .row .col-8 #title {
+  margin-top: 10px;
+}
+
+body .container .row .col-8 #title label[name="title"] {
+  font-family: cursive, Assistant, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
 body .container .row .col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,14 +25,9 @@ body .container .row .col {
           justify-content: center;
 }
 
-body .container .row .col #title {
-  margin-top: 10px;
-}
-
-body .container .row .col #title label[name="title"] {
-  font-family: cursive, Assistant, Arial, sans-serif;
-  font-size: 50px;
-  font-weight: 700;
+body .container .row .col #imgPines {
+  width: 125px;
+  height: 40px;
 }
 
 body .container .row .col .addTask {
@@ -28,11 +37,9 @@ body .container .row .col .addTask {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-body .container .row .col .addTask form[name="addTaskNew"] {
-  background-image: url("./img/formbg.jpg");
-  width: 650px;
+  background-image: url("./img/formbg.png");
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] input {
@@ -42,13 +49,14 @@ body .container .row .col .addTask form[name="addTaskNew"] input {
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"] {
+  background-color: transparent;
   margin-top: 15px;
   margin-left: 80px;
-  background-color: transparent;
   line-height: 2.3;
   border: none;
   height: 95px;
-  width: 550px;
+  word-break: break-word;
+  overflow: auto;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] .date {
@@ -61,11 +69,11 @@ body .container .row .col .addTask form[name="addTaskNew"] .date input[name="tas
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] .date input[name="taskHour"] {
-  width: 80px;
   color: #d9d9d9;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] button {
+  background-image: url("./img/buttonNote.png");
   margin-top: 25px;
   font-family: cursive, Assistant, Arial, sans-serif;
   border: 2px solid #4e45e5;
@@ -86,23 +94,37 @@ body .container .row .col #cardContainer .cardItem {
   background-image: url("./img/note1.png");
   background-repeat: no-repeat;
   display: inline-block;
-  margin: 10px;
-  width: 300px;
+  width: 275px;
   height: 200px;
+}
+
+body .container .row .col #cardContainer .cardItem:hover .fas {
+  opacity: 1;
+}
+
+body .container .row .col #cardContainer .cardItem .fas {
+  position: absolute;
+  top: 30px;
+  left: 255px;
+  opacity: 0;
+  cursor: pointer;
 }
 
 body .container .row .col #cardContainer .cardItem .cardText {
   position: absolute;
   top: 25px;
   left: 40px;
-  width: 230px;
+  width: 210px;
   height: 90px;
   font-size: 15px;
-  resize: both;
+  word-break: break-word;
   overflow: auto;
 }
 
 body .container .row .col #cardContainer .cardItem .cardDate {
+  position: absolute;
+  top: 115px;
+  left: 40px;
   margin: 0;
   border-radius: 5px;
   font-size: 10px;
@@ -110,6 +132,9 @@ body .container .row .col #cardContainer .cardItem .cardDate {
 }
 
 body .container .row .col #cardContainer .cardItem .cardTime {
+  position: absolute;
+  top: 130px;
+  left: 40px;
   margin: 0;
   border-radius: 5px;
   font-size: 10px;

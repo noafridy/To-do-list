@@ -18,13 +18,17 @@
 
 <body>
     <div class="container">
-
         <div class="row">
-            <div class="col">
+                <div class="col">
+                        <img id="imgPines" src="./img/Board pins.png">
+                    </div>
+            <div class="col-8">
                 <div id="title">
                     <label name="title"> My Task Bourd </label> </br></br>
                 </div>
             </div>
+            
+
         </div> <!-- end row -->
 
         <div class="row">
@@ -36,11 +40,14 @@
                             <input type="date" name="taskDate">
                             <input type="time" name="tasktime">
                         </div>
+                        
                         <button type="button" class="btn btn-light" onclick="addNewTask()"> Add </button>
-                        <button type="button" class="btn btn-light" onclick="deletNewTask()"> Delete </button></br></br>
+                        <button type="button" class="btn btn-light" onclick="deletNewTask()"> Delete </button><br /><br />
                     </form>
                 </div>
             </div>
+
+          
         </div> <!-- end row -->
 
         <div class="row">

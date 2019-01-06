@@ -67,9 +67,9 @@ function addCard(cardItem) {
     var div = document.createElement("div");
     div.innerHTML = "<i class='fas fa-times' onclick='removeCard(event)' data-key=" + cardItem.key + "> </i>" +
         "<p class='cardText'>" + cardItem.taskData + "</p >" +
-        "<p class='cardDate'>" + cardItem.date + "</p>" +
-        "<p class='cardTime'> " + cardItem.time + "</p>";
-    div.className += "cardItem";
+        "<p class='cardDate'>" + cardItem.taskDate + "</p>" +
+        "<p class='cardTime'> " + cardItem.tasktime + "</p>";
+    div.className += "cardItem";   
     cardContainer.append(div);
 
     // var cardContainer = document.getElementById("cardContainer");
@@ -91,17 +91,17 @@ function addCard(cardItem) {
 }
 
 function removeCard(event) {
-    //var cardToRemove = this.parentElement;
+    debugger;
     var target = event.target;
     var key = target.dataset.key;
     target.parentElement.remove();
-    for (var i=0;i<arr.length;i++){
-        if(key==arr[i].key){
-            arr.splice(i, 1); 
+    for (var i = 0; i < arr.length; i++) {
+        if (key == arr[i].key) {
+            arr.splice(i, 1);
             localStorage.setItem("arr", JSON.stringify(arr));
-            return; 
+            return;
         }
     }
 
-    // this.parentElement.remove(this);
+    //  this.parentElement.removechild(this);
 }
