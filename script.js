@@ -46,9 +46,10 @@ function addNewTask() {
             const cardData = createObj(taskData, taskDate, tasktime);
             arr.push(cardData);
             addCard(cardData);
+            alert("Your task is now in the cardes area");
             localStorage.setItem("arr", JSON.stringify(arr));
         } else {
-            alert("Operation failed!\nPlease insert your date.");
+            alert("Operation failed!\nPlease insert date.");
         }
     } else {
         alert("Operation failed!\nPlease insert task.");

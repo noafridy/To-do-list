@@ -1,3 +1,10 @@
+.imgAddDelteFlag, body .container .row .col .addTask form[name="addTaskNew"] #imgAdd, body .container .row .col .addTask form[name="addTaskNew"] #imgDelet {
+  margin-top: 3px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
 body {
   background-image: url("./img/cover2.png");
 }
@@ -37,9 +44,12 @@ body .container .row .col .addTask {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("./img/formbg.png");
-  border: 1px solid #e6e6e6;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] {
+  background-image: url("./img/notebook1.png");
   border-radius: 5px;
+  height: 180px;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] input {
@@ -50,21 +60,20 @@ body .container .row .col .addTask form[name="addTaskNew"] input {
 
 body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"] {
   background-color: transparent;
-  margin-top: 15px;
-  margin-left: 80px;
-  line-height: 2.3;
+  margin-left: 45px;
+  line-height: 2;
   border: none;
-  height: 95px;
+  height: 90px;
   word-break: break-word;
   overflow: auto;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] .date {
-  margin-top: 5px;
+  margin-top: 27px;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] .date input[name="taskDate"] {
-  margin-left: 80px;
+  margin-left: 45px;
   color: #d9d9d9;
 }
 
@@ -72,13 +81,12 @@ body .container .row .col .addTask form[name="addTaskNew"] .date input[name="tas
   color: #d9d9d9;
 }
 
-body .container .row .col .addTask form[name="addTaskNew"] button {
-  background-image: url("./img/buttonNote.png");
-  margin-top: 25px;
-  font-family: cursive, Assistant, Arial, sans-serif;
-  border: 2px solid #4e45e5;
-  color: #f07c7f;
-  width: 70px;
+body .container .row .col .addTask form[name="addTaskNew"] #imgAdd {
+  margin-left: 420px;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] #imgDelet {
+  margin-right: 10px;
 }
 
 body .container .row .col #cardContainer {
