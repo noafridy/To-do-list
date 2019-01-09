@@ -46,7 +46,7 @@ function addNewTask() {
             const cardData = createObj(taskData, taskDate, tasktime);
             arr.push(cardData);
             addCard(cardData);
-            alert("Your task is now in the cardes area");
+            //alert("Your task is now in the cardes area");
             localStorage.setItem("arr", JSON.stringify(arr));
         } else {
             alert("Operation failed!\nPlease insert date.");
@@ -57,7 +57,7 @@ function addNewTask() {
     console.log(arr);  //for check
 }
 
-function deletNewTask() {
+function deleteNewTask() {
     document.forms["addTaskNew"]["taskData"].value = "";
     document.forms["addTaskNew"]["taskDate"].value = "";
     document.forms["addTaskNew"]["tasktime"].value = "";
@@ -105,4 +105,5 @@ function removeCard(event) {
     }
 
     //  this.parentElement.removechild(this);
+    //this.parentElement.removechild(this.parentElement);
 }

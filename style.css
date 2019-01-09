@@ -1,4 +1,4 @@
-.imgAddDelteFlag, body .container .row .col .addTask form[name="addTaskNew"] #imgAdd, body .container .row .col .addTask form[name="addTaskNew"] #imgDelet {
+.imgAddDelteFlag, body .container .row .col .addTask form[name="addTaskNew"] #imgAdd, body .container .row .col .addTask form[name="addTaskNew"] #imgDelete {
   margin-top: 3px;
   height: 30px;
   width: 30px;
@@ -58,14 +58,23 @@ body .container .row .col .addTask form[name="addTaskNew"] input {
   border: 1px solid #ffffff;
 }
 
+body .container .row .col .addTask form[name="addTaskNew"] input:focus {
+  outline: none;
+}
+
 body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"] {
   background-color: transparent;
   margin-left: 45px;
   line-height: 2;
   border: none;
   height: 90px;
+  width: 450px;
   word-break: break-word;
   overflow: auto;
+}
+
+body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"]:focus {
+  outline: none;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] .date {
@@ -85,7 +94,7 @@ body .container .row .col .addTask form[name="addTaskNew"] #imgAdd {
   margin-left: 420px;
 }
 
-body .container .row .col .addTask form[name="addTaskNew"] #imgDelet {
+body .container .row .col .addTask form[name="addTaskNew"] #imgDelete {
   margin-right: 10px;
 }
 
@@ -104,6 +113,26 @@ body .container .row .col #cardContainer .cardItem {
   display: inline-block;
   width: 275px;
   height: 200px;
+  -webkit-animation: fadein 0.5s;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 body .container .row .col #cardContainer .cardItem:hover .fas {
@@ -127,6 +156,15 @@ body .container .row .col #cardContainer .cardItem .cardText {
   font-size: 15px;
   word-break: break-word;
   overflow: auto;
+}
+
+body .container .row .col #cardContainer .cardItem .cardText::-webkit-scrollbar {
+  width: 10px;
+}
+
+body .container .row .col #cardContainer .cardItem .cardText::-webkit-scrollbar-thumb {
+  background: #ffd84d;
+  border-radius: 10px;
 }
 
 body .container .row .col #cardContainer .cardItem .cardDate {

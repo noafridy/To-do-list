@@ -26,23 +26,28 @@ body {
                     justify-content: center; //background-color: $notebookBackgroundColor;
                     form[name="addTaskNew"] {
                         background-image: url("./img/notebook1.png");
-                       // border: 2px solid $cardBackgroundColor;
                         border-radius: $borderRadius; // width: $newTaskWidth;
                         height: 180px;
                         input {
                             background-color: transparent;
                             height: 20px;
-                            border: $inputBorder;
+                            border: 1px solid $inputBorder;
+                            &:focus {
+                                outline: none;
+                            }
                         }
                         textarea[name="taskData"] {
                             background-color: transparent;
-                            //margin-top: $newTaskMargintop;
                             margin-left: $newTaskMarginleft;
                             line-height: 2;
                             border: none;
-                            height: 90px; // width: 550px;
+                            height: 90px;
+                            width: 450px;
                             word-break: break-word;
                             overflow: auto;
+                            &:focus {
+                                outline: none;
+                            }
                         }
                         .date {
                             margin-top: $newTaskMargintopDate;
@@ -55,14 +60,14 @@ body {
                                 color: $dateColor;
                             }
                         }
-                        #imgAdd{                            
+                        #imgAdd {
                             @extend.imgAddDelteFlag;
                             margin-left: 420px;
                         }
-                        #imgDelet{
+                        #imgDelete {
                             @extend.imgAddDelteFlag;
                             margin-right: 10px;
-                        }                     
+                        }
                     } //end form[name="addTaskNew"]
                 }
                 #cardContainer {
@@ -74,12 +79,23 @@ body {
                         background-repeat: no-repeat;
                         display: inline-block;
                         width: 275px;
-                        height: 200px; // -webkit-transition: opacity 5s;
-                        // /* Safari */
-                        // transition: opacity 5s;
+                        height: 200px;
+                        -webkit-animation: fadein 0.5s;
+                        opacity: 1;
+                        @keyframes fadein {
+                            0% {
+                                opacity: 0;
+                            }
+                            100% {
+                                opacity: 1;
+                            }
+                        }
                         &:hover .fas {
                             opacity: 1;
                         }
+                        // &:hover .cardText {
+                        //     overflow: auto;
+                        // }
                         .fas {
                             position: absolute;
                             top: 30px;
@@ -88,6 +104,13 @@ body {
                             cursor: pointer;
                         }
                         .cardText {
+                            &::-webkit-scrollbar {
+                                width: 10px;
+                            }
+                            &::-webkit-scrollbar-thumb {
+                                background: $cardBackgroundColorScrollbar;
+                                border-radius: $borderRadius+5px;
+                            }
                             position: absolute;
                             top: 25px;
                             left: 40px;
@@ -96,6 +119,9 @@ body {
                             font-size: 15px;
                             word-break: break-word;
                             overflow: auto;
+                            //overflow: hidden; 
+                            // overflow-y: auto;
+                            // overflow-x:hidden;
                         }
                         .cardDate {
                             position: absolute;
@@ -121,3 +147,4 @@ body {
         }
     }
 } //end body
+
