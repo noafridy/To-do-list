@@ -4,13 +4,22 @@ function backup() {
     if (localStorage.getItem("arr") !== null) {
         arr = JSON.parse(localStorage.getItem("arr"));
         for (var i = 0; i < arr.length; i++) {
-            addCard(arr[i]);
+            createCard(arr[i]);
         }
     }
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
+$(document).ready(function () {
     backup();
+
+    $("#imgAdd").click(function () {
+        addNewTask();
+    });
+    $("#imgDelete").click(function () {
+        $("textarea[name='taskData']").val('');
+        $("input[name='taskDate']").val('');
+        $("input[name='tasktime']").val('');
+    });
 });
 
 function uuidv4() {
@@ -38,15 +47,14 @@ function checkTask(taskTemp) {
 }
 
 function addNewTask() {
-    var taskData = document.forms["addTaskNew"]["taskData"].value;
-    var taskDate = document.forms["addTaskNew"]["taskDate"].value;
-    var tasktime = document.forms["addTaskNew"]["tasktime"].value;
+    var taskData = $("textarea[name='taskData']").val();
+    var taskDate = $("input[name='taskDate']").val();
+    var tasktime = $("input[name='tasktime']").val();
     if (checkTask(taskData)) {
         if (checkTask(taskDate)) {
             const cardData = createObj(taskData, taskDate, tasktime);
             arr.push(cardData);
-            addCard(cardData);
-            //alert("Your task is now in the cardes area");
+            createCard(cardData);
             localStorage.setItem("arr", JSON.stringify(arr));
         } else {
             alert("Operation failed!\nPlease insert date.");
@@ -56,54 +64,23 @@ function addNewTask() {
     }
     console.log(arr);  //for check
 }
-
-function deleteNewTask() {
-    document.forms["addTaskNew"]["taskData"].value = "";
-    document.forms["addTaskNew"]["taskDate"].value = "";
-    document.forms["addTaskNew"]["tasktime"].value = "";
-}
-
-function addCard(cardItem) {
-    var cardContainer = document.getElementById("cardContainer");
-    var div = document.createElement("div");
-    div.innerHTML = "<i class='fas fa-times' onclick='removeCard(event)' data-key=" + cardItem.key + "> </i>" +
-        "<p class='cardText'>" + cardItem.taskData + "</p >" +
-        "<p class='cardDate'>" + cardItem.taskDate + "</p>" +
-        "<p class='cardTime'> " + cardItem.tasktime + "</p>";
-    div.className += "cardItem";   
-    cardContainer.append(div);
-
-    // var cardContainer = document.getElementById("cardContainer");
-    // var div = document.createElement("div");
-    // var text = document.createElement("p");
-    // var date = document.createElement("p");
-    // var time = document.createElement("p");
-    // text.innerHTML = card.taskData;
-    // date.innerHTML = card.taskDate;
-    // time.innerHTML = card.tasktime;
-    // div.className += "card";
-    // text.className+="cardText";
-    // date.className+="cardDate";
-    // time.className+="cardTime";
-    // div.appendChild(text);
-    // div.appendChild(date);
-    // div.appendChild(time);
-    // cardContainer.append(div);
-}
-
-function removeCard(event) {
-    debugger;
-    var target = event.target;
-    var key = target.dataset.key;
-    target.parentElement.remove();
-    for (var i = 0; i < arr.length; i++) {
-        if (key == arr[i].key) {
-            arr.splice(i, 1);
+function createCard(cardData) {
+    var $cardItem = $("<div class='cardItem'></div>");
+    var $deleteCard = $("<i class='fas fa-times'> </i>");
+    $deleteCard.click(function () {
+        this.parentElement.remove();
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].key === cardData.key){
+            arr.splice(i,1);
             localStorage.setItem("arr", JSON.stringify(arr));
-            return;
+            }
         }
-    }
-
-    //  this.parentElement.removechild(this);
-    //this.parentElement.removechild(this.parentElement);
+    })
+    debugger;
+    $cardItem.append($deleteCard);
+    $cardItem.append("<p class='cardText'>" + cardData.taskData + "</p >" +
+        "<p class='cardDate'>" + cardData.taskDate + "</p>" +
+        "<p class='cardTime'> " + cardData.tasktime + "</p>");
+    $("#cardContainer").append($cardItem);
 }
+

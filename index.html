@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
     <title>ToDoList</title>
 
@@ -34,15 +35,13 @@
             <div class="col">
                 <div class="addTask">
                     <form name="addTaskNew">
-                        <textarea name="taskData" rows="4" cols="50" placeholder="Enter your text"></textarea>
+                        <textarea name="taskData" id="taskData" rows="4" cols="50" placeholder="Enter your text"></textarea>
                         <div class="date">
-                            <input type="date" name="taskDate">
-                            <input type="time" name="tasktime">
+                            <input type="date" name="taskDate" id="taskDate">
+                            <input type="time" name="tasktime" id="tasktime">
                         </div>
-                        <img title="Add" id="imgAdd" onclick="addNewTask()" src="./img/add.png">
-                        <img title="Delete" id="imgDelete" onclick="deleteNewTask()" src="./img/delete.png">
-                        <!-- <button type="button" class="btn btn-light button-add" onclick="addNewTask()">  </button>  
-                        <button type="button" class="btn btn-light button-clear" onclick="deletNewTask()">  </button> -->
+                        <img title="Add" id="imgAdd" src="./img/add.png">
+                        <img title="Delete" id="imgDelete" src="./img/delete.png">
                     </form>
                     <!-- class="btn btn-light" add  Delete-->
                 </div><!-- end addTask -->
