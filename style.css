@@ -1,8 +1,18 @@
 .imgAddDelteFlag, body .container .row .col .addTask form[name="addTaskNew"] #imgAdd, body .container .row .col .addTask form[name="addTaskNew"] #imgDelete {
-  margin-top: 3px;
+  position: absolute;
+  bottom: 0;
   height: 30px;
   width: 30px;
   cursor: pointer;
+}
+
+.cardDateTimeFlag, body .container .row .col #cardContainer .cardItem .cardDate, body .container .row .col #cardContainer .cardItem .cardTime {
+  position: absolute;
+  left: 40px;
+  margin: 0;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 19px;
 }
 
 body {
@@ -48,6 +58,7 @@ body .container .row .col .addTask {
 
 body .container .row .col .addTask form[name="addTaskNew"] {
   background-image: url("./img/notebook1.png");
+  position: relative;
   border-radius: 5px;
   height: 180px;
 }
@@ -77,6 +88,12 @@ body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskDa
   outline: none;
 }
 
+@media only screen and (max-width: 767px) {
+  body .container .row .col .addTask form[name="addTaskNew"] textarea[name="taskData"] {
+    width: 275px;
+  }
+}
+
 body .container .row .col .addTask form[name="addTaskNew"] .date {
   margin-top: 27px;
 }
@@ -91,11 +108,17 @@ body .container .row .col .addTask form[name="addTaskNew"] .date input[name="tas
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] #imgAdd {
-  margin-left: 420px;
+  right: 45px;
 }
 
 body .container .row .col .addTask form[name="addTaskNew"] #imgDelete {
-  margin-right: 10px;
+  right: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  body .container .row .col .addTask form[name="addTaskNew"] {
+    width: 320px;
+  }
 }
 
 body .container .row .col #cardContainer {
@@ -168,22 +191,24 @@ body .container .row .col #cardContainer .cardItem .cardText::-webkit-scrollbar-
 }
 
 body .container .row .col #cardContainer .cardItem .cardDate {
-  position: absolute;
   top: 115px;
-  left: 40px;
-  margin: 0;
-  border-radius: 5px;
-  font-size: 10px;
-  height: 19px;
 }
 
 body .container .row .col #cardContainer .cardItem .cardTime {
-  position: absolute;
   top: 130px;
-  left: 40px;
-  margin: 0;
-  border-radius: 5px;
-  font-size: 10px;
-  height: 19px;
+}
+
+@media only screen and (max-width: 991px) {
+  body .container .row .col #cardContainer {
+    max-width: 585px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body .container .row .col #cardContainer {
+    max-width: 340px;
+    margin: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */

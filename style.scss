@@ -23,14 +23,15 @@ body {
                 }
                 .addTask {
                     display: flex;
-                    justify-content: center; //background-color: $notebookBackgroundColor;
+                    justify-content: center;
                     form[name="addTaskNew"] {
                         background-image: url("./img/notebook1.png");
-                        border-radius: $borderRadius; // width: $newTaskWidth;
-                        height: 180px;
+                        position: relative;
+                        border-radius: $borderRadius;
+                        height: $fromHeight;
                         input {
                             background-color: transparent;
-                            height: 20px;
+                            height: $inputHeight;
                             border: 1px solid $inputBorder;
                             &:focus {
                                 outline: none;
@@ -41,12 +42,15 @@ body {
                             margin-left: $newTaskMarginleft;
                             line-height: 2;
                             border: none;
-                            height: 90px;
-                            width: 450px;
+                            height: $taskDataHeight;
+                            width: $taskDataWidth;
                             word-break: break-word;
                             overflow: auto;
                             &:focus {
                                 outline: none;
+                            }
+                            @media only screen and (max-width: 767px) {
+                                width: 275px;
                             }
                         }
                         .date {
@@ -56,17 +60,19 @@ body {
                                 color: $dateColor;
                             }
                             input[name="taskHour"] {
-                                // width: 80px;
                                 color: $dateColor;
                             }
                         }
                         #imgAdd {
                             @extend.imgAddDelteFlag;
-                            margin-left: 420px;
+                            right: 45px;
                         }
                         #imgDelete {
                             @extend.imgAddDelteFlag;
-                            margin-right: 10px;
+                            right: 8px;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            width: 320px;
                         }
                     } //end form[name="addTaskNew"]
                 }
@@ -78,8 +84,8 @@ body {
                         background-image: url("./img/note1.png");
                         background-repeat: no-repeat;
                         display: inline-block;
-                        width: 275px;
-                        height: 200px;
+                        width: $cardItemWidth;
+                        height: $cardItemHeight;
                         -webkit-animation: fadein 0.5s;
                         opacity: 1;
                         @keyframes fadein {
@@ -93,9 +99,6 @@ body {
                         &:hover .fas {
                             opacity: 1;
                         }
-                        // &:hover .cardText {
-                        //     overflow: auto;
-                        // }
                         .fas {
                             position: absolute;
                             top: 30px;
@@ -113,38 +116,32 @@ body {
                             }
                             position: absolute;
                             top: 25px;
-                            left: 40px;
-                            width: 210px;
-                            height: 90px;
+                            left: $cardItemLeft;
+                            width: $cardTextWidth;
+                            height: $taskDataHeight;
                             font-size: 15px;
                             word-break: break-word;
                             overflow: auto;
-                            //overflow: hidden; 
-                            // overflow-y: auto;
-                            // overflow-x:hidden;
                         }
                         .cardDate {
-                            position: absolute;
+                            @extend.cardDateTimeFlag;
                             top: 115px;
-                            left: 40px;
-                            margin: 0;
-                            border-radius: 5px;
-                            font-size: 10px;
-                            height: 19px;
                         }
                         .cardTime {
-                            position: absolute;
+                            @extend.cardDateTimeFlag;
                             top: 130px;
-                            left: 40px;
-                            margin: 0;
-                            border-radius: 5px;
-                            font-size: 10px;
-                            height: 19px;
                         }
+                    }
+                    @media only screen and (max-width: 991px) {
+                        max-width: 585px;
+                        margin: auto;
+                    }
+                    @media only screen and (max-width: 767px) {
+                        max-width: 340px;
+                        margin: auto;
                     }
                 }
             }
         }
     }
 } //end body
-
