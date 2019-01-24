@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     backup();
 });
 
-function createKeyForCard() {   
+function createKeyForCard() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
@@ -25,35 +25,31 @@ function createObj(taskData, taskDate, tasktime) {
         taskData: taskData,
         taskDate: taskDate,
         tasktime: tasktime,
-        key: createKeyForCard()   
+        key: createKeyForCard()
     }
 }
 
 function checkTask(taskTemp) {
-    if (taskTemp) {
-        return true;
-    } else {
-        return false;
-    }
+    return !!taskTemp;
 }
 
 function addNewTask() {
     const taskData = document.forms["addTaskNew"]["taskData"].value;
-    const taskDate = document.forms["addTaskNew"]["taskDate"].value;
     const tasktime = document.forms["addTaskNew"]["tasktime"].value;
-    if (checkTask(taskData)) {
-        if (checkTask(taskDate)) {
-            const cardData = createObj(taskData, taskDate, tasktime);
-            arr.push(cardData);
-            addCard(cardData);
-            localStorage.setItem("arr", JSON.stringify(arr));
-        } else {
-            alert("Operation failed!\nPlease insert date.");
-        }
-    } else {
+    let taskDate = document.forms["addTaskNew"]["taskDate"].value;
+    taskDate = taskDate.split('-').reverse().join('-');
+    if (!checkTask(taskData)) {
         alert("Operation failed!\nPlease insert task.");
+        return;
     }
-    console.log(arr);  //for check
+    if (!checkTask(taskDate)) {
+        alert("Operation failed!\nPlease insert date.");
+        return;
+    }
+    const cardData = createObj(taskData, taskDate, tasktime);
+    arr.push(cardData);
+    addCard(cardData);
+    localStorage.setItem("arr", JSON.stringify(arr));
 }
 
 function deleteNewTask() {

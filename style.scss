@@ -4,14 +4,18 @@ body {
     .container {
         .row {
             margin-top: 20px;
-            .col-8 {
+            .col-12 {
                 #title {
                     margin-top: 10px;
+                    text-align: center;
                     label[name="title"] {
-                        font-family: cursive, Assistant, Arial, sans-serif;
+                        font-family: cursive, Arial, sans-serif;
                         font-size: 50px;
-                        font-weight: 700;
-                    }
+                        font-weight: 700; 
+                        @media only screen and (max-width: 479px) {
+                            font-size: 40px; 
+                        }
+                    } 
                 }
             }
             .col {
@@ -64,11 +68,11 @@ body {
                             }
                         }
                         #imgAdd {
-                            @extend.imgAddDelteFlag;
+                            @extend.imgAddDeletFlag;
                             right: 45px;
                         }
                         #imgDelete {
-                            @extend.imgAddDelteFlag;
+                            @extend.imgAddDeletFlag;
                             right: 8px;
                         }
                         @media only screen and (max-width: 767px) {
@@ -86,7 +90,7 @@ body {
                         display: inline-block;
                         width: $cardItemWidth;
                         height: $cardItemHeight;
-                        -webkit-animation: fadein 0.5s;
+                        -webkit-animation: fadein 1s;
                         opacity: 1;
                         @keyframes fadein {
                             0% {
